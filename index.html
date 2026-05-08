@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>But first...</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    min-height:100vh;
+    background:#03BDF0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Quicksand',sans-serif;
+    overflow:hidden;
+    position:relative;
+}
+.kiki,.bouba{
+    position:absolute;
+    opacity:0.22;
+}
+.kiki{
+    font-size:150px;
+}
+.bouba{
+    border-radius:120%;
+}
+.s1{top:40px;left:60px;color:#FF7CA4;}
+.s2{bottom:60px;right:70px;color:#6BDD6B;}
+.s3{top:140px;right:160px;color:#D68CE5;}
+
+.c1{
+    width:220px;
+    height:220px;
+    background:#FF7CA4;
+    bottom:-70px;
+    left:-70px;
+}
+.c2{
+    width:180px;
+    height:180px;
+    background:#D68CE5;
+    top:-40px;
+    right:-40px;
+}
+
+.house{
+    width:430px;
+    background:#03BDF0;
+    border:4px solid white;
+    border-radius:45px;
+    padding:40px;
+    text-align:center;
+    color:white;
+    z-index:2;
+}
+.logo{
+    width:185px;
+    display:block;
+    margin:auto auto 20px;
+}
+h1{
+    font-family:'Fredoka';
+    font-size:48px;
+    margin-bottom:20px;
+}
+input{
+    width:100%;
+    padding:15px;
+    margin-bottom:14px;
+    border:none;
+    border-radius:20px;
+    font-size:16px;
+}
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:20px;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+    margin-top:8px;
+    font-size:16px;
+}
+.log{
+    background:#FF7CA4;
+}
+.log:hover{
+    background:#ff5d8c;
+}
+.poof{
+    background:#6BDD6B;
+}
+.poof:hover{
+    background:#4fcf4f;
+}
+</style>
+</head>
+<body>
+
+<div class="kiki s1">★</div>
+<div class="kiki s2">★</div>
+<div class="kiki s3">★</div>
+<div class="bouba c1"></div>
+<div class="bouba c2"></div>
+
+<div class="house">
+<img src="logo.png" class="logo">
+<h1>School Login</h1>
+<input id="name" placeholder="Put Username!">
+<input type="password" id="key" placeholder="Put Password!">
+
+<button class="log" onclick="log()">Log In</button>
+<button class="poof" onclick="poof()">Cancel</button>
+</div>
+
+<script>
+const normpass = "123group4";
+const ussr = "9ruby26";
+const passkey = "storepass";
+function getPassword() {
+    let p = localStorage.getItem(passkey);
+    if (!p || p === "null" || p === "undefined") {
+        localStorage.setItem(passkey, normpass);
+        return normpass;
+    }
+    return p;
+}
+function log() {
+    let usr = document.getElementById("name").value;
+    let pss = document.getElementById("key").value;
+    let savepss = getPassword();
+    if (usr === ussr && pss === savepss) {
+        alert("ദ്ദി ( ᵔ ᗜ ᵔ ) Hey!");
+        location.href = "dashboard.html";
+    } else {
+        alert("(((p(>o<)q))) Boo!");
+    }
+}
+function poof() {
+    document.getElementById("name").value = "";
+    document.getElementById("key").value = "";
+}
+</script>
+</body>
+</html>

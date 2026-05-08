@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tasks ★</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    background:#03BDF0;
+    font-family:'Quicksand';
+    display:flex;
+    color:white;
+    overflow-x:hidden;
+    position:relative;
+}
+.kiki,.bouba{
+    position:fixed;
+    opacity:0.18;
+}
+.kiki{
+    font-size:100px;
+}
+.bouba{
+    border-radius:50%;
+}
+.s1{top:40px;right:80px;color:#FF7CA4;}
+.s2{bottom:40px;left:260px;color:#6BDD6B;}
+.s3{top:220px;left:480px;color:#D68CE5;}
+.c1{
+    width:220px;
+    height:220px;
+    background:#FF7CA4;
+    top:-60px;
+    left:170px;
+}
+.c2{
+    width:180px;
+    height:180px;
+    background:#D68CE5;
+    bottom:-50px;
+    right:-40px;
+}
+.bar{
+    width:240px;
+    min-height:100vh;
+    background:white;
+    padding:25px;
+    position:fixed;
+    border-radius:0 40px 40px 0;
+}
+.logo{
+    width:150px;
+    display:block;
+    margin:0 auto 25px;
+}
+.nav{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+.nav a{
+    height:52px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:18px;
+    background:#03BDF0;
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+    font-weight:600;
+}
+.nav a:hover{
+    background:#FF7CA4;
+}
+.mpart{
+    margin-left:260px;
+    padding:35px;
+    width:100%;
+}
+.title{
+    font-family:'Fredoka';
+    font-size:58px;
+    margin-bottom:25px;
+}
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+}
+.house{
+    background:white;
+    color:#03BDF0;
+    padding:25px;
+    border-radius:30px;
+    position:relative;
+    transition:0.3s;
+}
+.house:hover{
+    transform:translateY(-8px) scale(1.03);
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+.house::after{
+    content:"★";
+    position:absolute;
+    top:15px;
+    right:18px;
+    color:#FF7CA4;
+    font-size:28px;
+}
+.house h2{
+    font-family:'Fredoka';
+    margin-bottom:14px;
+}
+button{
+    padding:12px 18px;
+    border:none;
+    border-radius:15px;
+    background:#FF7CA4;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+    font-family:'Quicksand';
+}
+button:hover{
+    background:#ff5d8c;
+    transform:scale(1.05);
+}
+</style>
+</head>
+<body>
+<div class="kiki s1">★</div>
+<div class="kiki s2">★</div>
+<div class="kiki s3">★</div>
+<div class="bouba c1"></div>
+<div class="bouba c2"></div>
+
+<div class="bar">
+<img src="logo.png" class="logo">
+<div class="nav">
+<a href="dashboard.html">Dashboard</a>
+<a href="notebooks.html">Notebooks</a>
+<a href="tasks.html">! Tasks</a>
+<a href="profile.html">Profile</a>
+<a href="index.html">Logout</a>
+</div></div>
+
+<div class="mpart">
+<h1 class="title">Tasks</h1>
+<div class="grid">
+<div class="house">
+<h2>English Quiz 1</h2>
+<button onclick="location.href='assessment.html'">Take This!</button>
+</div>
+<div class="house">
+<h2>Math Drill 2</h2>
+<button onclick="location.href='assessment.html'">Take That!</button>
+</div>
+<div class="house">
+<h2>Science Lab Activity</h2>
+<button onclick="location.href='assessment.html'">And This!!</button>
+</div>
+<div class="house">
+<h2>Social Studies SW 2</h2>
+<button onclick="location.href='assessment.html'">And That!!</button>
+</div>
+<div class="house">
+<h2>ICT Homework</h2>
+<button onclick="location.href='assessment.html'">More!!!</button>
+</div>
+<div class="house">
+<h2>Filipino Form</h2>
+<button onclick="location.href='assessment.html'">Even More!!!</button>
+</div></div></div>
+</body>
+</html>

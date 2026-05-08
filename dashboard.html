@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard ★</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    background:#03BDF0;
+    font-family:'Quicksand';
+    display:flex;
+    color:white;
+    overflow-x:hidden;
+    position:relative;
+}
+.kiki,.bouba{
+    position:fixed;
+    opacity:0.18;
+}
+.kiki{
+    font-size:100px;
+}
+.bouba{
+    border-radius:50%;
+}
+.s1{top:30px;left:260px;color:#FF7CA4;}
+.s2{bottom:40px;right:60px;color:#6BDD6B;}
+.s3{top:200px;right:180px;color:#D68CE5;}
+.c1{
+    width:230px;
+    height:230px;
+    background:#FF7CA4;
+    bottom:-70px;
+    left:170px;
+}
+.c2{
+    width:180px;
+    height:180px;
+    background:#D68CE5;
+    top:-50px;
+    right:-40px;
+}
+.bar{
+    width:240px;
+    min-height:100vh;
+    background:white;
+    padding:25px;
+    position:fixed;
+    border-radius:0 40px 40px 0;
+    z-index:2;
+}
+.logo{
+    width:150px;
+    display:block;
+    margin:0 auto 25px;
+}
+.nav{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+.nav a{
+    height:52px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:18px;
+    background:#03BDF0;
+    color:white;
+    text-decoration:none;
+    transition:0.67s;
+    font-weight:600;
+}
+.nav a:hover{
+    background:#FF7CA4;
+}
+.mpart{
+    margin-left:260px;
+    padding:35px;
+    width:100%;
+}
+.title{
+    font-family:'Fredoka';
+    font-size:58px;
+    margin-bottom:20px;
+}
+.house{
+    background:white;
+    color:#03BDF0;
+    padding:25px;
+    border-radius:35px;
+    margin-bottom:20px;
+    position:relative;
+}
+.house::after{
+    content:"★";
+    position:absolute;
+    top:15px;
+    right:18px;
+    color:#FF7CA4;
+    font-size:30px;
+}
+.house h2{
+    margin-bottom:10px;
+}
+textarea{
+    width:100%;
+    height:140px;
+    border:none;
+    border-radius:20px;
+    padding:15px;
+    background:#eef9ff;
+    resize:none;
+}
+button{
+    margin-top:12px;
+    padding:12px 20px;
+    border:none;
+    border-radius:18px;
+    background:#6BDD6B;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+button:hover{
+    background:#4fcf4f;
+}
+</style>
+</head>
+<body>
+
+<div class="kiki s1">★</div>
+<div class="kiki s2">★</div>
+<div class="kiki s3">★</div>
+<div class="bouba c1"></div>
+<div class="bouba c2"></div>
+
+<div class="bar">
+<img src="logo.png" class="logo">
+<div class="nav">
+<a href="dashboard.html">! Dashboard</a>
+<a href="notebooks.html">Notebooks</a>
+<a href="tasks.html">Tasks</a>
+<a href="profile.html">Profile</a>
+<a href="index.html">Logout</a>
+</div>
+</div>
+
+<div class="mpart">
+<h1 class="title">Welcome Back! (˶ᵔ ᵕ ᵔ˶)</h1>
+<div class="house">
+<h2>Announcement of the Month</h2>
+<p>Mr. Balajadia READS student submission comments?!?</p>
+</div>
+
+<div class="house">
+<h2>News of the Week</h2>
+<p id="new"></p>
+</div>
+
+<div class="house">
+<h2>Anything to remember?</h2>
+<textarea id="notes"></textarea>
+<button onclick="save()">Keep!</button>
+</div></div>
+
+<script>
+const newz=[
+"Cafeteria finished renovation!",
+"New Glee lineup!",
+"End of the school year coming next week!",
+"More forms!",
+"This was made by Ducut, Marquez, and Saldana!"
+];
+let i=0;
+function change(){
+    document.getElementById("new").innerText=newz[i];
+    i=(i+1)%newz.length;
+}
+change();
+setInterval(change,3000);
+function save(){
+    localStorage.setItem("notes",document.getElementById("notes").value);
+    alert("Saved!");
+}
+window.onload=function(){
+    document.getElementById("notes").value=
+    localStorage.getItem("notes")||"";
+}
+</script>
+</body>
+</html>

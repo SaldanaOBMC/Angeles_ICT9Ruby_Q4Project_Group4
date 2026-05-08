@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notebooks ★</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    background:#03BDF0;
+    display:flex;
+    font-family:'Quicksand';
+    color:white;
+    overflow-x:hidden;
+    position:relative;
+}
+.kiki,.bouba{
+    position:fixed;
+    opacity:0.18;
+}
+.kiki{
+    font-size:100px;
+}
+.bouba{
+    border-radius:50%;
+}
+.s1{top:30px;right:70px;color:#FF7CA4;}
+.s2{bottom:50px;left:260px;color:#6BDD6B;}
+.s3{top:230px;left:500px;color:#D68CE5;}
+.c1{
+    width:220px;
+    height:220px;
+    background:#FF7CA4;
+    top:-60px;
+    left:170px;
+}
+.c2{
+    width:180px;
+    height:180px;
+    background:#D68CE5;
+    bottom:-40px;
+    right:-40px;
+}
+.bar{
+    width:240px;
+    min-height:100vh;
+    background:white;
+    padding:25px;
+    position:fixed;
+    border-radius:0 40px 40px 0;
+}
+.logo{
+    width:150px;
+    display:block;
+    margin:0 auto 25px;
+}
+.nav{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+.nav a{
+    height:52px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:18px;
+    background:#03BDF0;
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+    font-weight:600;
+}
+
+.nav a:hover{
+    background:#FF7CA4;
+}
+.mpart{
+    margin-left:260px;
+    padding:35px;
+    width:100%;
+}
+.title{
+    font-family:'Fredoka';
+    font-size:58px;
+    margin-bottom:25px;
+}
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+.house{
+    background:white;
+    color:#03BDF0;
+    padding:25px;
+    border-radius:35px;
+    position:relative;
+    cursor:pointer;
+    transition:0.3s;
+}
+.house:hover{
+    transform:translateY(-8px) scale(1.03);
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+.house::after{
+    content:"★";
+    position:absolute;
+    top:15px;
+    right:18px;
+    color:#FF7CA4;
+    font-size:28px;
+}
+.house h2{
+    font-family:'Fredoka';
+    margin-bottom:12px;
+}
+.prog{
+    height:12px;
+    background:#E6F7FF;
+    border-radius:20px;
+    overflow:hidden;
+}
+.fill{
+    height:100%;
+    width:0%;
+    transition:width 0.6s ease;
+}
+.pink{background:#FF7CA4;}
+.green{background:#6BDD6B;}
+.purple{background:#D68CE5;}
+.blue{background:#03BDF0;}
+.orange{background:#ffb347;}
+</style>
+</head>
+<body>
+<div class="kiki s1">★</div>
+<div class="kiki s2">★</div>
+<div class="kiki s3">★</div>
+<div class="bouba c1"></div>
+<div class="bouba c2"></div>
+
+<div class="bar">
+<img src="logo.png" class="logo">
+<div class="nav">
+<a href="dashboard.html">Dashboard</a>
+<a href="notebooks.html">! Notebooks</a>
+<a href="tasks.html">Tasks</a>
+<a href="profile.html">Profile</a>
+<a href="index.html">Logout</a>
+</div></div>
+
+<div class="mpart">
+<h1 class="title">Notebooks</h1>
+<div class="grid">
+<div class="house" onclick="giveprog('English',84)">
+<h2>English 9</h2>
+<div class="prog"><div class="fill pink"></div></div></div>
+<div class="house" onclick="giveprog('Math',73)">
+<h2>Math 9</h2>
+<div class="prog"><div class="fill green"></div></div></div>
+<div class="house" onclick="giveprog('Science',62)">
+<h2>Science 9</h2>
+<div class="prog"><div class="fill purple"></div></div></div>
+<div class="house" onclick="giveprog('Social Studies',51)">
+<h2>Social Studies 9</h2>
+<div class="prog"><div class="fill orange"></div></div></div>
+<div class="house" onclick="giveprog('Filipino',1)">
+<h2>Filipino 9</h2>
+<div class="prog"><div class="fill blue"></div></div></div>
+<div class="house" onclick="giveprog('ICT',67)">
+<h2>ICT 9</h2>
+<div class="prog"><div class="fill pink"></div></div></div></div></div>
+
+<script>
+function giveprog(subject, prog){
+    alert(subject + ": You've completed " + prog + "% of this subject. ^-^");
+    let cards = document.querySelectorAll(".house");
+    cards.forEach(card => {
+        let title = card.querySelector("h2").innerText;
+        if(title.includes(subject)){
+            let bar = card.querySelector(".fill");
+            bar.style.width = prog + "%";
+        }
+    });
+}
+</script>
+</body>
+</html>

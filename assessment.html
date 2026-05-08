@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assessment ★</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    min-height:100vh;
+    background:#03BDF0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Quicksand';
+    overflow:hidden;
+    position:relative;
+}
+.kiki,.bouba{
+    position:absolute;
+    opacity:0.2;
+}
+.kiki{
+    font-size:100px;
+}
+.bouba{
+    border-radius:50%;
+}
+.s1{top:50px;left:70px;color:#FF7CA4;}
+.s2{bottom:60px;right:80px;color:#6BDD6B;}
+.c1{
+    width:220px;
+    height:220px;
+    background:#D68CE5;
+    top:-70px;
+    right:-50px;
+}
+.c2{
+    width:180px;
+    height:180px;
+    background:#FF7CA4;
+    bottom:-40px;
+    left:-40px;
+}
+.house{
+    width:420px;
+    background:white;
+    border-radius:45px;
+    padding:50px;
+    text-align:center;
+    color:#03BDF0;
+    z-index:2;
+}
+.logo{
+    width:150px;
+    display:block;
+    margin:0 auto 20px;
+}
+h1{
+    font-family:'Fredoka';
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+p{
+    margin-bottom:20px;
+}
+button{
+    padding:15px 24px;
+    border:none;
+    border-radius:18px;
+    background:#6BDD6B;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+    font-size:16px;
+}
+button:hover{
+    background:#4fcf4f;
+    transform:scale(1.05);
+}
+</style>
+</head>
+<body>
+
+<div class="kiki s1">★</div>
+<div class="kiki s2">★</div>
+<div class="bouba c1"></div>
+<div class="bouba c2"></div>
+
+<div class="house">
+<img src="logo.png" class="logo">
+<h1>Assessment</h1>
+<p>Are you suuuureee?</p>
+<button onclick="takis()">Start Assessment</button><br><br>
+<button onclick="location.href='tasks.html'">Go Back!</button>
+</div>
+
+<script>
+function takis(){
+    alert("Oops! We didn't code for that yet...");
+}
+</script>
+</body>
+</html>
